@@ -11,19 +11,20 @@ import UIKit
 class NewEntryViewController: UIViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
-    @IBOutlet weak var formulaPicker: UIPickerView!
     @IBOutlet weak var classNameTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     
     var helpOptionsArray = ["What do I need on my final exam?", "What is my final grade?", "There are 2+ parts in my final. What do I have to get on each part?", "Not including my final, the lowest test grade is dropped. What do I need on my final?"]
     
-    var conversionString = ""
-    var classNames = ""
+    //    var conversionString = ""
+    var classNames: String!
+    var currentDates: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        formulaPicker.delegate = self
-        formulaPicker.dataSource = self
-        conversionString = helpOptionsArray[formulaPicker.selectedRow(inComponent: 0)]
+        //        formulaPicker.delegate = self
+        //        formulaPicker.dataSource = self
+        //        conversionString = helpOptionsArray[formulaPicker.selectedRow(inComponent: 0)]
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor.lightGray.cgColor, UIColor.gray.cgColor, UIColor.blue.cgColor]
@@ -37,6 +38,7 @@ class NewEntryViewController: UIViewController {
         if segue.identifier == "NewEntryNext" {
             let destination = segue.destination as! FinalCalculatorViewController
             destination.className = classNames
+            destination.currentDate = currentDates
         }
     }
     
@@ -44,6 +46,13 @@ class NewEntryViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.navigationBar.isHidden = false
         super.viewWillAppear(animated)
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func cancelBarButtonPressed(_ sender: UIBarButtonItem) {
@@ -56,48 +65,11 @@ class NewEntryViewController: UIViewController {
     }
     
     @IBAction func nextToolbarButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "Unwind", sender: nil)
+        if classNameTextField.text!.isEmpty || dateTextField.text!.isEmpty {
+            showAlert(title: "Invalid Input", message: "Please fill out all fields.")
+        } else {
+            performSegue(withIdentifier: "Unwind", sender: nil)
+        }
     }
-    
-    
 }
 
-extension NewEntryViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return helpOptionsArray.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return helpOptionsArray[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 45.0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let label: UILabel
-        
-        if let view = view {
-            label = view as! UILabel
-        } else {
-            label = UILabel(frame: CGRect(x: 0, y: 0, width: pickerView.frame.width, height: 300))
-        }
-        
-        label.text = helpOptionsArray[row]
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
-        label.sizeToFit()
-        label.textAlignment = .center
-        return label
-    }
-    
-}

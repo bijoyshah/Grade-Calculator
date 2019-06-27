@@ -35,13 +35,18 @@ class InitialViewController: UIViewController {
         signIn()
     }
     
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func signIn() {
         let providers: [FUIAuthProvider] = [FUIGoogleAuth(),]
         if authUI.auth?.currentUser == nil {
             self.authUI?.providers = providers
             present(authUI.authViewController(), animated: true, completion: nil)
-            //        } else {
-            //            tableView.isHidden = false
         }
     }
     
@@ -63,12 +68,9 @@ class InitialViewController: UIViewController {
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         do {
             try authUI!.signOut()
-            print("^^^ Successfully signed out!")
-            //            tableView.isHidden = true
             signIn()
         } catch {
-            //            tableView.isHidden = true
-            print("*** ERROR: Couldn't sign out")
+            showAlert(title: "Error", message: "Couldn't sign out.")
         }
     }
     

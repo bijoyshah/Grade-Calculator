@@ -173,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="1683" y="877"/>
         </scene>
-        <!--New Entry View Controller-->
+        <!--New Entry-->
         <scene sceneID="kUv-MF-9U7">
             <objects>
                 <viewController id="YR5-0M-7Se" customClass="NewEntryViewController" customModule="Grade_Calculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,61 +181,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What specifically do you need help with?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmw-A1-A2q">
-                                <rect key="frame" x="52" y="412" width="310" height="71"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date &amp; Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-p1-rEb">
-                                <rect key="frame" x="20" y="125" width="162" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa6-81-AeE">
-                                <rect key="frame" x="0.0" y="481" width="414" height="216"/>
-                            </pickerView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="t80-Ve-phE">
-                                <rect key="frame" x="20" y="188" width="374" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="583258573.99861205">
-                                    <!--2019-06-26 16:16:13 +0000-->
-                                </date>
-                            </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Class Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="550-oL-sN1">
-                                <rect key="frame" x="20" y="66" width="374" height="30"/>
+                                <rect key="frame" x="20" y="381" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6hu-7Z-VVj"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="classNameFieldChanged:" destination="UPs-hr-kuM" eventType="editingDidEnd" id="XVm-66-4y6"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Date. (e.g. 06/27/2019)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MT7-Ld-OmG">
+                                <rect key="frame" x="20" y="448" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="550-oL-sN1" firstAttribute="trailing" secondItem="ZoW-HE-Blm" secondAttribute="trailingMargin" id="A51-ag-XpG"/>
-                            <constraint firstItem="hmw-A1-A2q" firstAttribute="leading" secondItem="IQ4-Ak-STf" secondAttribute="leading" constant="52" id="AKN-WK-tfg"/>
-                            <constraint firstItem="fa6-81-AeE" firstAttribute="top" secondItem="hmw-A1-A2q" secondAttribute="bottom" constant="28" id="E8f-mI-dCp"/>
+                            <constraint firstItem="MT7-Ld-OmG" firstAttribute="leading" secondItem="550-oL-sN1" secondAttribute="leading" id="CRg-i7-9fU"/>
                             <constraint firstItem="550-oL-sN1" firstAttribute="leading" secondItem="ZoW-HE-Blm" secondAttribute="leadingMargin" id="Fhg-hO-Yex"/>
-                            <constraint firstItem="550-oL-sN1" firstAttribute="top" secondItem="IQ4-Ak-STf" secondAttribute="top" constant="22" id="MKA-DI-S37"/>
-                            <constraint firstItem="fa6-81-AeE" firstAttribute="centerX" secondItem="hmw-A1-A2q" secondAttribute="centerX" id="Rlp-nP-fbi"/>
-                            <constraint firstItem="fa6-81-AeE" firstAttribute="leading" secondItem="ZoW-HE-Blm" secondAttribute="leading" id="WQs-K5-VHZ"/>
-                            <constraint firstItem="t80-Ve-phE" firstAttribute="top" secondItem="jM2-p1-rEb" secondAttribute="bottom" constant="42" id="fAm-n1-za9"/>
-                            <constraint firstItem="jM2-p1-rEb" firstAttribute="top" secondItem="550-oL-sN1" secondAttribute="bottom" constant="29" id="hiX-rF-fnS"/>
-                            <constraint firstItem="t80-Ve-phE" firstAttribute="trailing" secondItem="550-oL-sN1" secondAttribute="trailing" id="ho2-23-TEI"/>
-                            <constraint firstItem="t80-Ve-phE" firstAttribute="leading" secondItem="jM2-p1-rEb" secondAttribute="leading" id="iza-0y-4rj"/>
-                            <constraint firstItem="jM2-p1-rEb" firstAttribute="leading" secondItem="550-oL-sN1" secondAttribute="leading" id="jwl-yY-l7U"/>
-                            <constraint firstItem="hmw-A1-A2q" firstAttribute="top" secondItem="t80-Ve-phE" secondAttribute="bottom" constant="8" id="sEl-qg-NeB"/>
-                            <constraint firstItem="fa6-81-AeE" firstAttribute="centerX" secondItem="t80-Ve-phE" secondAttribute="centerX" id="yMx-K2-vlB"/>
+                            <constraint firstItem="550-oL-sN1" firstAttribute="top" secondItem="IQ4-Ak-STf" secondAttribute="top" constant="293" id="MKA-DI-S37"/>
+                            <constraint firstItem="MT7-Ld-OmG" firstAttribute="trailing" secondItem="550-oL-sN1" secondAttribute="trailing" id="ZGa-bP-NAL"/>
+                            <constraint firstItem="MT7-Ld-OmG" firstAttribute="top" secondItem="550-oL-sN1" secondAttribute="bottom" constant="37" id="omO-mp-brE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IQ4-Ak-STf"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="y7M-h9-dQ5">
+                    <navigationItem key="navigationItem" title="New Entry" id="y7M-h9-dQ5">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Udd-9X-laJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -247,7 +224,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="nextToolbarButtonPressed:" destination="YR5-0M-7Se" id="cU8-XS-KKs"/>
-                                <segue destination="Zd8-zO-X9q" kind="show" id="55p-mB-3sT"/>
+                                <segue destination="Zd8-zO-X9q" kind="show" identifier="Unwind" id="55p-mB-3sT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -255,8 +232,8 @@
                     <connections>
                         <outlet property="cancelBarButton" destination="Udd-9X-laJ" id="8JF-TD-9uu"/>
                         <outlet property="classNameTextField" destination="550-oL-sN1" id="Zli-el-EOa"/>
+                        <outlet property="dateTextField" destination="MT7-Ld-OmG" id="gyv-BK-KME"/>
                         <outlet property="doneBarButton" destination="WVb-ai-pcs" id="f2g-ge-yRQ"/>
-                        <outlet property="formulaPicker" destination="fa6-81-AeE" id="3Y5-Jx-8yd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVs-aJ-DaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -299,7 +276,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Zd8-zO-X9q" kind="show" identifier="ShowEntry" id="82R-fx-BmX"/>
+                                            <segue destination="Zd8-zO-X9q" kind="show" identifier="ShowHistoryCell" id="XEX-SO-RPa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -317,6 +294,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="9hF-dv-WrI"/>
                         <barButtonItem title="Home" id="fbf-7U-g5e">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Lpl-ia-43o" kind="show" animates="NO" id="juc-R3-vad"/>
                             </connections>
@@ -324,14 +302,22 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NHh-N1-8rP"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="History" id="NuZ-ap-lkQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vaE-Fi-nk9">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="J5D-9m-L6c">
                             <connections>
-                                <segue destination="5hd-He-WyG" kind="presentation" identifier="AddEntry" id="4Cx-m1-xwu"/>
+                                <action selector="editBarButtonPressed:" destination="z2s-KD-9HT" id="eXL-Ox-G2k"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="K9j-Th-pS6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="83B-th-vJt" kind="presentation" id="O27-aC-o4w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addBarButton" destination="K9j-Th-pS6" id="tW3-Ec-e1W"/>
+                        <outlet property="editBarButton" destination="J5D-9m-L6c" id="oOP-YB-n81"/>
                         <outlet property="tableView" destination="8xT-72-ej1" id="XCX-CC-khd"/>
                     </connections>
                 </viewController>
@@ -368,9 +354,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your final is worth                          % of your grade." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eb-e2-SpX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your final is worth                          % of your grade." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eb-e2-SpX">
                                 <rect key="frame" x="19" y="323" width="377" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -382,13 +367,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Output will show here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-Qq-LUk">
-                                <rect key="frame" x="-42" y="493" width="499" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your current grade is                          %." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eN-H7-mFX">
                                 <rect key="frame" x="58" y="167" width="294" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -403,9 +381,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUC-6P-LQH">
-                                <rect key="frame" x="133" y="386" width="148" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUC-6P-LQH">
+                                <rect key="frame" x="175" y="394" width="64" height="30"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -413,9 +390,26 @@
                                     <action selector="calculateButtonPressed:" destination="Zd8-zO-X9q" eventType="touchUpInside" id="ij4-jj-6Tm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output will show here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-Qq-LUk">
+                                <rect key="frame" x="20" y="489" width="374" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="CoA-jX-Bok"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xSP-Qq-LUk" firstAttribute="centerX" secondItem="7eb-e2-SpX" secondAttribute="centerX" id="1Di-xB-S16"/>
+                            <constraint firstItem="xSP-Qq-LUk" firstAttribute="centerX" secondItem="zUC-6P-LQH" secondAttribute="centerX" id="27s-Ag-baF"/>
+                            <constraint firstItem="xSP-Qq-LUk" firstAttribute="top" secondItem="zUC-6P-LQH" secondAttribute="bottom" constant="65" id="Dsr-c0-LaY"/>
+                            <constraint firstItem="xSP-Qq-LUk" firstAttribute="leading" secondItem="GmN-VR-fza" secondAttribute="leading" constant="20" id="N1u-gu-y11"/>
+                            <constraint firstItem="GmN-VR-fza" firstAttribute="trailing" secondItem="xSP-Qq-LUk" secondAttribute="trailing" constant="20" id="f8I-aI-0pD"/>
+                            <constraint firstItem="GmN-VR-fza" firstAttribute="bottom" secondItem="xSP-Qq-LUk" secondAttribute="bottom" constant="248" id="qwL-XT-RiV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GmN-VR-fza"/>
                     </view>
                     <toolbarItems>
@@ -440,7 +434,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="q8x-hV-oHZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="pe2-dq-Z3a" kind="unwind" identifier="UnwindFromSaveToHistory" unwindAction="unwindFromFinalCalculatorViewControllerWithSegue:" id="d1i-Ho-f4V"/>
+                                <segue destination="z2s-KD-9HT" kind="show" id="QKc-Sy-5qh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -454,7 +448,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84Q-Ax-fw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="pe2-dq-Z3a" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1113.0434782608697" y="876.5625"/>
         </scene>
@@ -474,7 +467,7 @@
                                 <rect key="frame" x="20" y="119" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="classNameFieldChanged:" destination="UPs-hr-kuM" eventType="editingDidEnd" id="PjR-yC-gCG"/>
@@ -522,6 +515,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ydk-zv-95C">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
+                                <action selector="saveButtonPressed:" destination="UPs-hr-kuM" id="8qZ-Yo-7n8"/>
                                 <segue destination="7zz-VD-PQm" kind="unwind" identifier="UnwindFromSave" unwindAction="unwindFromNewViewControllerNameHereWithSegue:" id="aFN-oQ-jBS"/>
                             </connections>
                         </barButtonItem>
@@ -672,11 +666,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wf6-8g-pMl"/>
-        <segue reference="55p-mB-3sT"/>
+        <segue reference="XEX-SO-RPa"/>
         <segue reference="nqz-mi-Tr9"/>
-        <segue reference="Boy-dC-sCc"/>
+        <segue reference="ckG-m7-IYi"/>
         <segue reference="lAW-fD-HiL"/>
-        <segue reference="x2G-BZ-VFF"/>
+        <segue reference="juc-R3-vad"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

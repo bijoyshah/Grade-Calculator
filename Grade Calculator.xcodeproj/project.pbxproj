@@ -15,7 +15,6 @@
 		A259C8C622C1251F003EF748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A259C8C422C1251F003EF748 /* LaunchScreen.storyboard */; };
 		A2607D6E22C142FF00C54E14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2607D6D22C142FF00C54E14 /* GoogleService-Info.plist */; };
 		A2EF6CCA22C245FF00679B10 /* IndividualClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF6CC922C245FF00679B10 /* IndividualClassViewController.swift */; };
-		A2EF6CCC22C2483100679B10 /* ClassesAndGradesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF6CCB22C2483100679B10 /* ClassesAndGradesStruct.swift */; };
 		A2EF6CCE22C2D49600679B10 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF6CCD22C2D49600679B10 /* InitialViewController.swift */; };
 		A2EF6CD022C37CE900679B10 /* FinalCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF6CCF22C37CE900679B10 /* FinalCalculatorViewController.swift */; };
 		A2EF6CD222C3887400679B10 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF6CD122C3887400679B10 /* HistoryViewController.swift */; };
@@ -34,7 +33,6 @@
 		A259C8C722C1251F003EF748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2607D6D22C142FF00C54E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A2EF6CC922C245FF00679B10 /* IndividualClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualClassViewController.swift; sourceTree = "<group>"; };
-		A2EF6CCB22C2483100679B10 /* ClassesAndGradesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesAndGradesStruct.swift; sourceTree = "<group>"; };
 		A2EF6CCD22C2D49600679B10 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		A2EF6CCF22C37CE900679B10 /* FinalCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCalculatorViewController.swift; sourceTree = "<group>"; };
 		A2EF6CD122C3887400679B10 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				A259C8BB22C1251D003EF748 /* AppDelegate.swift */,
-				A2EF6CCB22C2483100679B10 /* ClassesAndGradesStruct.swift */,
 				A259C8BD22C1251D003EF748 /* ClassesListViewController.swift */,
 				A2EF6CC922C245FF00679B10 /* IndividualClassViewController.swift */,
 				A259C8BF22C1251D003EF748 /* Main.storyboard */,
@@ -248,7 +245,6 @@
 				A2EF6CD422C3EE5C00679B10 /* NewEntryViewController.swift in Sources */,
 				A259C8BE22C1251D003EF748 /* ClassesListViewController.swift in Sources */,
 				A259C8BC22C1251D003EF748 /* AppDelegate.swift in Sources */,
-				A2EF6CCC22C2483100679B10 /* ClassesAndGradesStruct.swift in Sources */,
 				A2EF6CD222C3887400679B10 /* HistoryViewController.swift in Sources */,
 				A2EF6CD022C37CE900679B10 /* FinalCalculatorViewController.swift in Sources */,
 			);

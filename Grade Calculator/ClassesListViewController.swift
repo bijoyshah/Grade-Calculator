@@ -57,12 +57,11 @@ class ClassesListViewController: UIViewController {
                 tableView.deselectRow(at: selectedPath, animated: true)
             }
         }
-        updateGPA()
+  //      updateGPA()
     }
     
     func updateGPA() {
         var currentGPA = calculateOverallGPA(grades: grades)
-        print("inside updateGPA the value of currentGPA is \(currentGPA)")
         gpaLabel.text = String(format:"%.3f", currentGPA)
     }
     
@@ -105,8 +104,6 @@ class ClassesListViewController: UIViewController {
             var credit = credits[i]
             if let creditDouble = Int(credit) {
                 currentGPA = currentGPA + (addingValueToGPA * Double(creditDouble))
-            } else {
-                showAlert(title: "Invalid Number", message: "Please enter a single digit number into the text field.")
             }
         }
         currentGPA = currentGPA/totalGPAPoints

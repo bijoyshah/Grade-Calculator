@@ -20,13 +20,16 @@ class IndividualClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if oneClass == nil {
             oneClass = ""
+            grade = ""
+            credit = ""
         }
+        
         classNameTextField.text = oneClass
         finalGradeTextField.text = grade
         numberOfCreditsTextField.text = credit
-        enableDisableField()
         
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -35,10 +38,10 @@ class IndividualClassViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
         self.navigationController!.toolbar.barTintColor = UIColor.blue
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue,
-                          sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UnwindFromSave" {
             oneClass = classNameTextField.text
             grade = finalGradeTextField.text
@@ -53,14 +56,6 @@ class IndividualClassViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func enableDisableField() {
-        if classNameTextField.text!.count > 0 {
-            saveBarButton.isEnabled = true
-        } else {
-            saveBarButton.isEnabled = false
-        }
-    }
-    
     @IBAction func cancelBarButtonPressed(_ sender: UIBarButtonItem) {
         let isPresentingInAddMode = presentingViewController is UINavigationController
         if isPresentingInAddMode { // modal segue
@@ -70,8 +65,11 @@ class IndividualClassViewController: UIViewController {
         }
     }
     
-    @IBAction func classNameFieldChanged(_ sender: UITextField) {
-        enableDisableField()
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if classNameTextField.text!.isEmpty || finalGradeTextField.text!.isEmpty || numberOfCreditsTextField.text!.isEmpty {
+            showAlert(title: "Invalid Input", message: "Please fill out all fields appropriately.")
+        }
+        
     }
     
 }
