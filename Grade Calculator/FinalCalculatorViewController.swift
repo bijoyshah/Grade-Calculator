@@ -13,7 +13,6 @@ class FinalCalculatorViewController: UIViewController {
     @IBOutlet weak var desiredClassGradeTextField: UITextField!
     @IBOutlet weak var wieghtOfFinalTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var saveToHistorySwitch: UISwitch!
     @IBOutlet weak var currentClassLabel: UILabel!
     
     
@@ -24,7 +23,6 @@ class FinalCalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveToHistorySwitch.isOn = true
         
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -33,10 +31,12 @@ class FinalCalculatorViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
         self.navigationController!.toolbar.barTintColor = UIColor.blue
+        
+        resultLabel.text = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UnwindFromSave" {
+        if segue.identifier == "UnwindFromSaveToHistory" {
             if let currentGradeTemp = Double(currentGradeTextField.text!) {
                 currentGrade = currentGradeTemp
             }
@@ -46,12 +46,20 @@ class FinalCalculatorViewController: UIViewController {
             if let weightOfFinalTemp = Double(wieghtOfFinalTextField.text!) {
                 weightOfFinal = weightOfFinalTemp
             }
+            className = currentClassLabel.text!
         }
     }
     
-    @IBAction func saveToHistorySwitched(_ sender: UISwitch) {
-        if saveToHistorySwitch.isOn == true {
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        currentClassLabel.text = className
+    }
+    
+    func whatDoINeedOnMyFinal() -> Double{
+        var weightOfRestOfClass = (100.00 - Double(weightOfFinal))/100.00
+        currentGrade = Double(currentGrade) * weightOfRestOfClass
+        var desiredGradeCalculation = desiredGrade - currentGrade
+        desiredGradeCalculation = (desiredGradeCalculation / weightOfFinal) * 100
+        return desiredGradeCalculation
     }
     
     @IBAction func  unwindFromNewEntryViewController(segue: UIStoryboardSegue) {
@@ -70,17 +78,21 @@ class FinalCalculatorViewController: UIViewController {
         }
     }
     
-    //    func whatDoINeedOnMyFinal() {
-    //        var weightOfRestOfClass = 100.00 - Double(weightOfFinal)!
-    //        currentGrade = Double(currentGrade) * weightOfRestOfClass
-    //    }
+    @IBAction func calculateButtonPressed(_ sender: UIButton) {
+        if let currentGradeTemp = Double(currentGradeTextField.text!) {
+            currentGrade = currentGradeTemp
+        }
+        if let desiredGradeTemp = Double(desiredClassGradeTextField.text!) {
+            desiredGrade = desiredGradeTemp
+        }
+        if let weightOfFinalTemp = Double(wieghtOfFinalTextField.text!) {
+            weightOfFinal = weightOfFinalTemp
+        }
+        className = currentClassLabel.text!
+        resultLabel.text = "You need a \(String(format:"%.02f",whatDoINeedOnMyFinal()))% on your final exam to get a \(desiredGrade)% in \(className). Good luck!"
+    }
     
-    //    if Double(currentGrade) >= 0.00 && Double(desiredGrade) >= 0.00 && Double(weightOfFinal) >= 0.00 {
-    //
-    //
-    //    }
-    
-    
+    @IBAction func historyButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "ShowHistory", sender: nil)
+    }
 }
-
-

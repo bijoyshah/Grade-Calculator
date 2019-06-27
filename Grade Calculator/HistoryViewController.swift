@@ -57,9 +57,9 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath)
         cell.textLabel?.text = historyClassName[indexPath.row]
-        cell.detailTextLabel?.text = "06/26/2019"
+        cell.detailTextLabel?.text = "06/27/2019"
         return cell
     }
     

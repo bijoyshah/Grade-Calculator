@@ -14,7 +14,7 @@ class NewEntryViewController: UIViewController {
     @IBOutlet weak var formulaPicker: UIPickerView!
     @IBOutlet weak var classNameTextField: UITextField!
     
-    var helpOptionsArray = ["Calculate GPA", "What do I need on my final exam?", "What is my final grade?", "There are 2+ parts in my final. What do I have to get on each part?", "Not including my final, the lowest test grade is dropped. What do I need on my final?"]
+    var helpOptionsArray = ["What do I need on my final exam?", "What is my final grade?", "There are 2+ parts in my final. What do I have to get on each part?", "Not including my final, the lowest test grade is dropped. What do I need on my final?"]
     
     var conversionString = ""
     var classNames = ""
