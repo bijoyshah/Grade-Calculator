@@ -33,7 +33,7 @@ class FinalCalculatorViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
         self.navigationController!.toolbar.barTintColor = UIColor.blue
-    
+        
         
         if currentGrade == nil {
             currentGradeTextField.text = ""
@@ -43,11 +43,21 @@ class FinalCalculatorViewController: UIViewController {
             currentClassLabel.text = ""
             resultLabel.text = ""
         }
-        currentGradeTextField.text = String(currentGrade)
-        resultLabel.text = String(scoreNeeded)
-        desiredClassGradeTextField.text = String(desiredGrade)
-        wieghtOfFinalTextField.text = String(weightOfFinal)
         currentClassLabel.text = String(className)
+        
+        if let cGrade = currentGrade {
+            self.currentGradeTextField.text = String(cGrade)
+        }
+        if let cName = className {
+            self.currentClassLabel.text = String(cName)
+        }
+        if let dGrade = desiredGrade {
+            self.desiredClassGradeTextField.text = String(dGrade)
+        }
+        if let wFinal = weightOfFinal {
+            self.wieghtOfFinalTextField.text = String(wFinal)
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +81,15 @@ class FinalCalculatorViewController: UIViewController {
             if let scoreNeededTemp = resultLabel.text {
                 scoreNeeded = scoreNeededTemp
             }
-
+            
+        } else if segue.identifier == "ShowHistorySegue"{
+            let destination = segue.destination as! HistoryViewController
+            destination.historyClassName = [className]
+            destination.historyCurrentGrade = [Double(currentGradeTextField.text!)!]
+            destination.historyDesiredGrade = [Double(desiredClassGradeTextField.text!)!]
+            destination.historyWeightOfFinal = [Double(wieghtOfFinalTextField.text!)!]
+            destination.historyDate = [currentDate]
+            destination.historyScoreNeeded = [String(whatDoINeedOnMyFinal())]
         }
     }
     
@@ -110,6 +128,9 @@ class FinalCalculatorViewController: UIViewController {
             showAlert(title: "Invalid Input.", message: "Please fill out all fields.")
             resultLabel.text = ""
         } else {
+//        } else if whatDoINeedOnMyFinal() >= 100.00 {
+//            showAlert(title: "Sorry", message: "It is not possible to get this grade in \(className!). Please try again with valid numbers.")
+//        } else {
             if let currentGradeTemp = Double(currentGradeTextField.text!) {
                 currentGrade = currentGradeTemp
             }
@@ -120,12 +141,20 @@ class FinalCalculatorViewController: UIViewController {
                 weightOfFinal = weightOfFinalTemp
             }
             className = currentClassLabel.text!
-            resultLabel.text = "You need a \(String(format:"%.02f", whatDoINeedOnMyFinal()))% on your final exam to get a \(desiredGrade)% in \(className). Good luck!"
+            resultLabel.text = "You need a \(String(format:"%.02f", whatDoINeedOnMyFinal()))% on your final exam to get a \(desiredGrade!)% in \(className!). Good luck!"
         }
     }
     
-    @IBAction func historyButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "ShowHistory", sender: nil)
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "ShowHistorySegue", sender: nil)
     }
     
+    @IBAction func historyButtonPressed(_ sender: UIBarButtonItem) {
+        if currentGradeTextField.text!.isEmpty || desiredClassGradeTextField.text!.isEmpty || wieghtOfFinalTextField.text!.isEmpty {
+            showAlert(title: "Invalid Input", message: "Please fill out all fields.")
+        } else {
+            performSegue(withIdentifier: "ShowHistorySegue", sender: nil)
+        }
+        
+    }
 }

@@ -23,14 +23,11 @@ class IndividualClassViewController: UIViewController {
         
         if oneClass == nil {
             oneClass = ""
-            grade = ""
-            credit = ""
-        }
-        
-        classNameTextField.text = oneClass
-        finalGradeTextField.text = grade
-        numberOfCreditsTextField.text = credit
-        
+        } else {
+            classNameTextField.text = oneClass
+            finalGradeTextField.text = grade
+            numberOfCreditsTextField.text = credit
+        } 
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor.lightGray.cgColor, UIColor.gray.cgColor, UIColor.blue.cgColor]
@@ -66,10 +63,10 @@ class IndividualClassViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if classNameTextField.text!.isEmpty || finalGradeTextField.text!.isEmpty || numberOfCreditsTextField.text!.isEmpty {
+        if classNameTextField!.text!.isEmpty || finalGradeTextField.text!.isEmpty || numberOfCreditsTextField.text!.isEmpty {
             showAlert(title: "Invalid Input", message: "Please fill out all fields appropriately.")
         }
-        
+
     }
     
 }

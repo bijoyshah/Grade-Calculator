@@ -13,12 +13,12 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
-    var historyClassName = ["Portico", "Digital Tech"]
-    var historyCurrentGrade = [94, 98.5]
-    var historyDesiredGrade = [93, 93.0]
-    var historyWeightOfFinal = [20, 30.2]
-    var historyDate = ["06/27/2019", "06/28/2019"]
-    var historyScoreNeeded = ["23", "23"]
+    var historyClassName = [String]()
+    var historyCurrentGrade = [Double]()
+    var historyDesiredGrade = [Double]()
+    var historyWeightOfFinal = [Double]()
+    var historyDate = [String]()
+    var historyScoreNeeded = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,7 @@ class HistoryViewController: UIViewController {
         self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
         self.navigationController!.toolbar.barTintColor = UIColor.blue
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowHistoryCell" {
             let destination = segue.destination as! FinalCalculatorViewController

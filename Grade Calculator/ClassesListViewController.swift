@@ -20,9 +20,9 @@ class ClassesListViewController: UIViewController {
     @IBOutlet weak var editBarButton: UIBarButtonItem!
     
     
-    var classes = ["Portico"]
-    var grades = ["A"]
-    var credits = ["3"]
+    var classes = [String]()
+    var grades = [String]()
+    var credits = [String]()
     var authUI: FUIAuth!
     
     override func viewDidLoad() {
@@ -38,9 +38,16 @@ class ClassesListViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
         self.navigationController!.toolbar.barTintColor = UIColor.blue
+        if grades.isEmpty {
+            gpaLabel.text = "0.000"
+        }
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if grades.isEmpty {
+            gpaLabel.text = "0.000"
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         updateGPA()
     }
@@ -57,11 +64,11 @@ class ClassesListViewController: UIViewController {
                 tableView.deselectRow(at: selectedPath, animated: true)
             }
         }
-  //      updateGPA()
+        //      updateGPA()
     }
     
     func updateGPA() {
-        var currentGPA = calculateOverallGPA(grades: grades)
+        let currentGPA = calculateOverallGPA(grades: grades)
         gpaLabel.text = String(format:"%.3f", currentGPA)
     }
     
@@ -100,10 +107,12 @@ class ClassesListViewController: UIViewController {
             } else if grades[i] == "D-" {
                 addingValueToGPA = 0.667
             }
-            totalGPAPoints += Double(credits[i])!
-            var credit = credits[i]
-            if let creditDouble = Int(credit) {
-                currentGPA = currentGPA + (addingValueToGPA * Double(creditDouble))
+            if let totalPoints = Double(credits[i]) {
+                totalGPAPoints += totalPoints
+                let credit = credits[i]
+                if let creditDouble = Int(credit) {
+                    currentGPA = currentGPA + (addingValueToGPA * Double(creditDouble))
+                }
             }
         }
         currentGPA = currentGPA/totalGPAPoints
@@ -135,6 +144,9 @@ class ClassesListViewController: UIViewController {
             tableView.setEditing(true, animated: true)
             editBarButton.title = "Done"
         }
+        if grades.isEmpty {
+            gpaLabel.text = "0.000"
+        }
     }
     
 }
@@ -157,7 +169,13 @@ extension ClassesListViewController: UITableViewDelegate, UITableViewDataSource 
             grades.remove(at: indexPath.row)
             credits.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            if grades.isEmpty {
+                gpaLabel.text = "0.000"
+            }
             updateGPA()
+        }
+        if grades.isEmpty {
+            gpaLabel.text = "0.000"
         }
     }
     

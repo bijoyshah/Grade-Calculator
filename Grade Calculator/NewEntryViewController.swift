@@ -10,13 +10,12 @@ import UIKit
 
 class NewEntryViewController: UIViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var nextBarButton: UIBarButtonItem!
     @IBOutlet weak var classNameTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     
     var helpOptionsArray = ["What do I need on my final exam?", "What is my final grade?", "There are 2+ parts in my final. What do I have to get on each part?", "Not including my final, the lowest test grade is dropped. What do I need on my final?"]
     
-    //    var conversionString = ""
     var classNames: String!
     var currentDates: String!
     
@@ -37,8 +36,8 @@ class NewEntryViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewEntryNext" {
             let destination = segue.destination as! FinalCalculatorViewController
-            destination.className = classNames
-            destination.currentDate = currentDates
+            destination.className = classNameTextField.text
+            destination.currentDate = dateTextField.text
         }
     }
     
@@ -68,7 +67,7 @@ class NewEntryViewController: UIViewController {
         if classNameTextField.text!.isEmpty || dateTextField.text!.isEmpty {
             showAlert(title: "Invalid Input", message: "Please fill out all fields.")
         } else {
-            performSegue(withIdentifier: "Unwind", sender: nil)
+            performSegue(withIdentifier: "NewEntryNext", sender: nil)
         }
     }
 }
