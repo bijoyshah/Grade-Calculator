@@ -81,6 +81,7 @@ class FinalCalculatorViewController: UIViewController {
             if let scoreNeededTemp = resultLabel.text {
                 scoreNeeded = scoreNeededTemp
             }
+            resultLabel.text = "You need a \(String(format:"%.02f", whatDoINeedOnMyFinal()))% on your final exam to get a \(desiredGrade!)% in \(className!). Good luck!"
             
         } else if segue.identifier == "ShowHistorySegue"{
             let destination = segue.destination as! HistoryViewController
@@ -112,6 +113,7 @@ class FinalCalculatorViewController: UIViewController {
         let source = segue.source as! NewEntryViewController
         className = source.classNames
         currentDate = source.currentDates
+        resultLabel.text = "You need a \(String(format:"%.02f", whatDoINeedOnMyFinal()))% on your final exam to get a \(desiredGrade!)% in \(className!). Good luck!"
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {

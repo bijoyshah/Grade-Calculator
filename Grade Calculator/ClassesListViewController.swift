@@ -119,7 +119,7 @@ class ClassesListViewController: UIViewController {
         return currentGPA
     }
     
-    @IBAction func unwindFromNewViewControllerNameHere(segue: UIStoryboardSegue) {
+    @IBAction func unwindFromIndividualClassViewController(segue: UIStoryboardSegue) {
         let source = segue.source as! IndividualClassViewController
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             classes[selectedIndexPath.row] = source.oneClass

@@ -62,11 +62,14 @@ class IndividualClassViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if classNameTextField!.text!.isEmpty || finalGradeTextField.text!.isEmpty || numberOfCreditsTextField.text!.isEmpty {
-            showAlert(title: "Invalid Input", message: "Please fill out all fields appropriately.")
-        }
-
-    }
+//    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+//        if classNameTextField!.text!.isEmpty || finalGradeTextField.text!.isEmpty || numberOfCreditsTextField.text!.isEmpty {
+//            showAlert(title: "Invalid Input", message: "Please fill out all fields appropriately.")
+//        }
+//        //        } else {
+//        //            performSegue(withIdentifier: "UnwindFromSave", sender: nil)
+//    }
+    
+    
     
 }
