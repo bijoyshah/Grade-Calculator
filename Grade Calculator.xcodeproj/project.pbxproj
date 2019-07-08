@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F6ABAD6A77041B267F7E765 /* Pods_Grade_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E5258280AAF8B5A827CD8A /* Pods_Grade_Calculator.framework */; };
+		A250F2F722D2AD450085E1CC /* Splash Screen View ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250F2F622D2AD450085E1CC /* Splash Screen View ControllerViewController.swift */; };
 		A259C8BC22C1251D003EF748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A259C8BB22C1251D003EF748 /* AppDelegate.swift */; };
 		A259C8BE22C1251D003EF748 /* ClassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A259C8BD22C1251D003EF748 /* ClassesListViewController.swift */; };
 		A259C8C122C1251D003EF748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A259C8BF22C1251D003EF748 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		32E5258280AAF8B5A827CD8A /* Pods_Grade_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grade_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0222242F0C1552C6C205DA5 /* Pods-Grade Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grade Calculator.debug.xcconfig"; path = "Target Support Files/Pods-Grade Calculator/Pods-Grade Calculator.debug.xcconfig"; sourceTree = "<group>"; };
+		A250F2F622D2AD450085E1CC /* Splash Screen View ControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash Screen View ControllerViewController.swift"; sourceTree = "<group>"; };
 		A259C8B822C1251D003EF748 /* Grade Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grade Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A259C8BB22C1251D003EF748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A259C8BD22C1251D003EF748 /* ClassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesListViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				A2EF6CC922C245FF00679B10 /* IndividualClassViewController.swift */,
 				A2EF6CCD22C2D49600679B10 /* InitialViewController.swift */,
 				A259C8BF22C1251D003EF748 /* Main.storyboard */,
+				A250F2F622D2AD450085E1CC /* Splash Screen View ControllerViewController.swift */,
 				A2EF6CD322C3EE5B00679B10 /* NewEntryViewController.swift */,
 				A2EF6CCF22C37CE900679B10 /* FinalCalculatorViewController.swift */,
 				A2EF6CD122C3887400679B10 /* HistoryViewController.swift */,
@@ -245,6 +248,7 @@
 				A2EF6CD422C3EE5C00679B10 /* NewEntryViewController.swift in Sources */,
 				A259C8BE22C1251D003EF748 /* ClassesListViewController.swift in Sources */,
 				A259C8BC22C1251D003EF748 /* AppDelegate.swift in Sources */,
+				A250F2F722D2AD450085E1CC /* Splash Screen View ControllerViewController.swift in Sources */,
 				A2EF6CD222C3887400679B10 /* HistoryViewController.swift in Sources */,
 				A2EF6CD022C37CE900679B10 /* FinalCalculatorViewController.swift in Sources */,
 			);

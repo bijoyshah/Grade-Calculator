@@ -26,8 +26,8 @@ class InitialViewController: UIViewController {
         gradient.colors = [UIColor.lightGray.cgColor, UIColor.gray.cgColor, UIColor.blue.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
-        self.navigationController!.toolbar.barTintColor = UIColor.blue
+        self.navigationController?.navigationBar.barTintColor = UIColor.lightGray
+        self.navigationController?.toolbar.barTintColor = UIColor.blue
     }
     
     override func viewDidAppear(_ animated: Bool) {

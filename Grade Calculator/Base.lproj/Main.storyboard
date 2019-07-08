@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ET-gR-DBC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGc-Kk-dZ7">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,30 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to GradeCalc!    What do you  need help with? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LY-n0-B8b">
-                                <rect key="frame" x="37" y="151" width="346" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9OU-I0-BgQ">
-                                <rect key="frame" x="211" y="544" width="150" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5n-ZO-Wg3">
+                                <rect key="frame" x="20" y="201" width="374" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                                <state key="normal" title="What do I need on my Final?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YR5-0M-7Se" kind="show" identifier="FinalGradeCalcFirstScreenPresentation" id="Boy-dC-sCc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5n-ZO-Wg3">
-                                <rect key="frame" x="53" y="544" width="150" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Pmu-wH-zyg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="lTx-Le-TEc"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="sP5-py-cet"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                 <state key="normal" title="Calculate GPA">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,9 +34,53 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="CalculateGPASection" id="vbQ-AS-nKt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9OU-I0-BgQ">
+                                <rect key="frame" x="20" y="301" width="374" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="2Ns-87-aVl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="7Hu-4u-mKf"/>
+                                    <constraint firstAttribute="height" constant="80" id="lL3-q7-WtD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                <state key="normal" title="What do I need on my Final?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YR5-0M-7Se" kind="show" identifier="FinalGradeCalcFirstScreenPresentation" id="Boy-dC-sCc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need help with? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOx-C0-x9g">
+                                <rect key="frame" x="20" y="120" width="374" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="vFJ-kX-DC3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9OU-I0-BgQ" firstAttribute="top" secondItem="y5n-ZO-Wg3" secondAttribute="bottom" constant="20" id="3xC-r0-NeV"/>
+                            <constraint firstItem="eOx-C0-x9g" firstAttribute="leading" secondItem="29L-xp-M5H" secondAttribute="leading" constant="20" id="88d-ZC-2Eq"/>
+                            <constraint firstItem="29L-xp-M5H" firstAttribute="trailing" secondItem="eOx-C0-x9g" secondAttribute="trailing" constant="20" id="99r-4M-SXh"/>
+                            <constraint firstItem="29L-xp-M5H" firstAttribute="trailing" secondItem="9OU-I0-BgQ" secondAttribute="trailing" constant="20" id="BJy-IV-L3i"/>
+                            <constraint firstItem="y5n-ZO-Wg3" firstAttribute="top" secondItem="eOx-C0-x9g" secondAttribute="bottom" constant="8" id="C66-2e-NjF"/>
+                            <constraint firstItem="9OU-I0-BgQ" firstAttribute="leading" secondItem="y5n-ZO-Wg3" secondAttribute="leading" id="CGh-k2-HEm"/>
+                            <constraint firstItem="eOx-C0-x9g" firstAttribute="leading" secondItem="29L-xp-M5H" secondAttribute="leading" constant="20" id="Jmu-QH-Vg4"/>
+                            <constraint firstItem="9OU-I0-BgQ" firstAttribute="top" secondItem="y5n-ZO-Wg3" secondAttribute="bottom" constant="20" id="LDY-Ui-zFm"/>
+                            <constraint firstItem="29L-xp-M5H" firstAttribute="trailing" secondItem="y5n-ZO-Wg3" secondAttribute="trailing" constant="20" id="LYK-dN-BmD"/>
+                            <constraint firstItem="y5n-ZO-Wg3" firstAttribute="leading" secondItem="29L-xp-M5H" secondAttribute="leading" constant="20" id="NdT-gZ-Zif"/>
+                            <constraint firstItem="29L-xp-M5H" firstAttribute="bottom" secondItem="9OU-I0-BgQ" secondAttribute="bottom" constant="432" id="d2z-em-bv7"/>
+                            <constraint firstItem="eOx-C0-x9g" firstAttribute="leading" secondItem="29L-xp-M5H" secondAttribute="leading" constant="20" id="kOW-cM-36q"/>
+                            <constraint firstItem="9OU-I0-BgQ" firstAttribute="trailing" secondItem="y5n-ZO-Wg3" secondAttribute="trailing" id="l8r-w5-qPH"/>
+                            <constraint firstItem="29L-xp-M5H" firstAttribute="trailing" secondItem="eOx-C0-x9g" secondAttribute="trailing" constant="20" id="mkz-DH-2N6"/>
+                            <constraint firstItem="29L-xp-M5H" firstAttribute="trailing" secondItem="eOx-C0-x9g" secondAttribute="trailing" constant="20" id="msc-MB-l0z"/>
+                            <constraint firstItem="eOx-C0-x9g" firstAttribute="top" secondItem="29L-xp-M5H" secondAttribute="top" constant="76" id="vau-BF-HHF"/>
+                            <constraint firstItem="9OU-I0-BgQ" firstAttribute="leading" secondItem="29L-xp-M5H" secondAttribute="leading" constant="20" id="zDe-Fw-XbE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="29L-xp-M5H"/>
                     </view>
                     <navigationItem key="navigationItem" id="FId-8H-xu4">
@@ -67,6 +95,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpZ-Eu-YxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718.84057971014499" y="876.5625"/>
+        </scene>
+        <!--Splash Screen View Controller View Controller-->
+        <scene sceneID="JBg-Xu-HN9">
+            <objects>
+                <viewController id="eGc-Kk-dZ7" customClass="Splash_Screen_View_ControllerViewController" customModule="Grade_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NnC-ON-swh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImage" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-v5-eKw">
+                                <rect key="frame" x="0.0" y="280" width="414" height="336"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Uss-AZ-bKf" appends="YES" id="ndG-CV-C9G"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to GradeCalc! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBB-dN-nMy">
+                                <rect key="frame" x="20" y="85" width="374" height="135"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="VX2-qZ-S9v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cFt-fe-iVq" firstAttribute="trailing" secondItem="gBB-dN-nMy" secondAttribute="trailing" constant="20" id="FtO-yA-WNd"/>
+                            <constraint firstItem="cFt-fe-iVq" firstAttribute="bottom" secondItem="L9c-v5-eKw" secondAttribute="bottom" constant="246" id="dhE-Mk-JYw"/>
+                            <constraint firstItem="gBB-dN-nMy" firstAttribute="top" secondItem="cFt-fe-iVq" secondAttribute="top" constant="41" id="hfo-zh-4mx"/>
+                            <constraint firstItem="gBB-dN-nMy" firstAttribute="leading" secondItem="cFt-fe-iVq" secondAttribute="leading" constant="20" id="iLZ-Hp-i7v"/>
+                            <constraint firstItem="L9c-v5-eKw" firstAttribute="top" secondItem="cFt-fe-iVq" secondAttribute="top" constant="236" id="udR-x4-Xjm"/>
+                            <constraint firstItem="cFt-fe-iVq" firstAttribute="trailing" secondItem="L9c-v5-eKw" secondAttribute="trailing" id="xsK-wY-UpE"/>
+                            <constraint firstItem="L9c-v5-eKw" firstAttribute="leading" secondItem="cFt-fe-iVq" secondAttribute="leading" id="yWT-az-aKy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cFt-fe-iVq"/>
+                    </view>
+                    <connections>
+                        <outlet property="throneImageView" destination="L9c-v5-eKw" id="IHt-OZ-IHq"/>
+                        <segue destination="6ET-gR-DBC" kind="show" identifier="ShowMain" id="6f6-tv-i1S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="265-xZ-5Jq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Uss-AZ-bKf">
+                    <connections>
+                        <action selector="imageTapped:" destination="eGc-Kk-dZ7" id="7XW-1v-rqP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="718.84057971014499" y="1628.5714285714284"/>
         </scene>
         <!--Classes List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -357,7 +436,7 @@
                                     <action selector="calculateButtonPressed:" destination="Zd8-zO-X9q" eventType="touchUpInside" id="ij4-jj-6Tm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output will show here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-Qq-LUk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-Qq-LUk">
                                 <rect key="frame" x="20" y="489" width="374" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="CoA-jX-Bok"/>
@@ -674,6 +753,7 @@
     </scenes>
     <resources>
         <image name="referenceScale" width="1090" height="876"/>
+        <image name="splashImage" width="275" height="183"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RSK-N1-c0N"/>
