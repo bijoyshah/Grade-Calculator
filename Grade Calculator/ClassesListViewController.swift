@@ -39,13 +39,13 @@ class ClassesListViewController: UIViewController {
 //        self.navigationController!.navigationBar.barTintColor = UIColor.lightGray
   //      self.navigationController!.toolbar.barTintColor = UIColor.blue
         if grades.isEmpty {
-            gpaLabel.text = "0.000"
+            gpaLabel.text = "Overall GPA: 0.000"
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if grades.isEmpty {
-            gpaLabel.text = "0.000"
+            gpaLabel.text = "Overall GPA: 0.000"
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +69,7 @@ class ClassesListViewController: UIViewController {
     
     func updateGPA() {
         let currentGPA = calculateOverallGPA(grades: grades)
-        gpaLabel.text = String(format:"%.3f", currentGPA)
+        gpaLabel.text = String("Overall GPA: ") + String(format:"%.3f", currentGPA)
     }
     
     func showAlert(title: String, message: String) {
@@ -145,7 +145,7 @@ class ClassesListViewController: UIViewController {
             editBarButton.title = "Done"
         }
         if grades.isEmpty {
-            gpaLabel.text = "0.000"
+            gpaLabel.text = "Overall GPA: 0.000"
         }
     }
     
@@ -170,12 +170,12 @@ extension ClassesListViewController: UITableViewDelegate, UITableViewDataSource 
             credits.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             if grades.isEmpty {
-                gpaLabel.text = "0.000"
+                gpaLabel.text = "Overall GPA: 0.000"
             }
             updateGPA()
         }
         if grades.isEmpty {
-            gpaLabel.text = "0.000"
+            gpaLabel.text = "Overall GPA: 0.000"
         }
     }
     
